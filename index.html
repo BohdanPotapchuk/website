@@ -10,36 +10,34 @@
     <title>website</title>
 </head>
 <body>
- 
 <header>
-   <nav id="navigation">
+   <nav class="nav nav_upper" id="navigation">
     <div class="logo"><img src="image/favicon.png" title="logo"></div>
-       <a class="menu links" id="menu1">Головна</a>
-       <a class="menu links" id="about_us" >Про нас</a>
-       <a class="menu links" id="rules" >Правила</a>
-       <a class="menu links" id="contact" >Контакти</a>
-       <a class="menu links" id="etc" >Інше</a>
+       <a data-menu="main" class="menu links" id="menu1">Головна</a>
+       <a data-menu="aboutUs" class="menu links" id="about_us" >Про нас</a>
+       <a data-menu="rules" class="menu links" id="rules" >Правила</a>
+       <a data-menu="contact" class="menu links" id="contact" >Контакти</a>
+       <a data-menu="etc" class="menu links" id="etc" >Інше</a>
    </nav>
 </header>
 <div class="center">
-    <article>
+    <article class="nav">
         <h2 class="h2" >Hello</h2>
-        <a class="links aside" href="#">Послуга номер 1</a>
-        <a class="links aside" href="#">Послуга номер 2</a>
-        <a class="links aside" href="#">Послуга номер 3</a>
+        <a data-menu="service1" class="links aside" >Послуга номер 1</a>
+        <a data-menu="service2" class="links aside" >Послуга номер 2</a>
+        <a data-menu="service3" class="links aside" >Послуга номер 3</a>
         <div class="banner"><img src="image/banner1.png"></div>
     </article>
-
-    <main class="main_display">
+    <div data-menu="main" class="main_display visible_block">
         <div class="top">
             <div class="top_left">
-                <h1>Welcome</h1>
+                <h1 data-tooltip="It's greating">Welcome</h1>
                 <form class="search">
                     <input type="search">
                 </form>
             </div>
-            <form class="check_in">
-                <input type="email" class="input">
+            <form id="form" class="check_in">
+                <input id="emailInput" type="email" class="input">
                 <br/>
                 <input type="password" class="input">
                 <br/>
@@ -47,8 +45,7 @@
                 <input type="submit" class="reset_submit">
             </form>
        </div>
-       <div class="text">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores beatae deleniti deserunt fugiat saepe sed inventore necessitatibus quibusdam in, expedita eius, omnis perspiciatis distinctio ducimus sit voluptas molestiae ex ad.
+       <div tabindex="0" class="text">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores beatae deleniti deserunt fugiat saepe sed inventore necessitatibus quibusdam in, expedita eius, omnis perspiciatis distinctio ducimus sit voluptas molestiae ex ad.
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores beatae deleniti deserunt fugiat saepe sed inventore necessitatibus quibusdam in, expedita eius, omnis perspiciatis distinctio ducimus sit voluptas molestiae ex ad.
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores beatae deleniti deserunt fugiat saepe sed inventore necessitatibus quibusdam in, expedita eius, omnis perspiciatis distinctio ducimus sit voluptas molestiae ex ad.
@@ -56,12 +53,12 @@
        </div >
        <section class="center_button">
           <a class="banner_2" href="#">
-            <img src="image/banner2.png">
+            <img data-tooltip="It's advert" src="image/banner2.png">
           </a>
           <a class="map" href="https://www.google.com.ua/maps/@50.444965,30.5219909,15z?hl=ru" target="blank"><img ></a>
        </section>
-    </main>
-    <main class="about_us_display">
+    </div>
+    <div data-menu="aboutUs" class="about_us_display">
         <div class="top">
             <div class="top_left">
                 <h1>Welcome </h1>
@@ -81,8 +78,8 @@
        <div class="text">
            Про нас
        </div >
-    </main>
-    <main class="contact_display">
+    </div>
+    <div data-menu="contact" class="contact_display">
         <div class="top">
             <div class="top_left">
                 <h1>Welcome </h1>
@@ -102,8 +99,8 @@
        <div class="text">
             Наші Контакти
        </div >
-    </main>
-    <main class="rules_display">
+    </div>
+    <div data-menu="rules" class="rules_display">
         <div class="top">
             <div class="top_left">
                 <h1>Welcome </h1>
@@ -123,8 +120,8 @@
        <div class="text">
            Правила
        </div >
-    </main>
-    <main class="etc_display">
+    </div>
+    <div data-menu="etc" class="etc_display">
         <div class="top">
             <div class="top_left">
                 <h1>Welcome </h1>
@@ -144,8 +141,8 @@
        <div class="text">
            Інформація
        </div >
-    </main>
-    <main class="pos1">
+    </div>
+    <div data-menu="service1"  class="service_first">
         <div class="top">
             <div class="top_left">
                 <h1>Welcome </h1>
@@ -165,8 +162,8 @@
        <div class="text">
            Послуга1
        </div >
-    </main>
-    <main class="pos2">
+    </div>
+    <div data-menu="service2" class="service_second">
         <div class="top">
             <div class="top_left">
                 <h1>Welcome </h1>
@@ -186,8 +183,8 @@
        <div class="text">
            Послуга2
        </div >
-    </main>
-    <main class="pos3">
+    </div>
+    <div data-menu="service3" class="service_third">
         <div class="top">
             <div class="top_left">
                 <h1>Welcome </h1>
@@ -207,7 +204,7 @@
        <div class="text">
            Послуга3
        </div >
-    </main>
+    </div>
     
 </div>    
 
@@ -218,6 +215,5 @@
    </div>
 </footer>
 <script src="index.js" defer type="module"></script>
-<script src="rules_module.js" defer type="module"></script>
 </body>
 </html>
